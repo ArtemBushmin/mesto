@@ -1,0 +1,22 @@
+.popup__job {
+  margin: 0 auto;
+  border: none;
+  border-bottom: calc(100vw/1280) solid rgba(0, 0, 0, 0.2);
+  padding: 0 0 calc(100vw/(1280/13)) 0;
+  width: calc(100vw/(1280/358));
+  font-style: normal;
+  font-weight: normal;
+  font-size: calc(100vw/(1280/18));
+  line-height: calc(100vw/(1280/22));
+}
+
+@media screen and (max-width: 320px) {
+  .popup__job {
+    margin: 0 auto;
+    border-bottom: calc(100vw/320) solid rgba(0, 0, 0, 0.2);
+    padding: 0 0 calc(100vw/(320/13)) 0;
+    width: calc(100vw/(320/238));
+    font-size: calc(100vw/(320/14));
+    line-height: calc(100vw/(320/17));
+  }
+}

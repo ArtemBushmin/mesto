@@ -1,0 +1,13 @@
+.photo-grid__item {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: calc(100vw/(1280/10));
+  overflow: hidden;
+}
+
+@media screen and (max-width: 320px) {
+  .photo-grid__item {
+    border-radius: calc(100vw/(320/10));
+  }
+}

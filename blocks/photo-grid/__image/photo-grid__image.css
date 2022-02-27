@@ -1,0 +1,12 @@
+.photo-grid__image {
+  object-fit: cover;
+  width: calc(100vw/(1280/282));
+  height: calc(100vw/(1280/282));
+}
+
+@media screen and (max-width: 320px) {
+  .photo-grid__image {
+    width: calc(100vw/(320/282));
+    height: calc(100vw/(320/282));
+  }
+}

@@ -1,0 +1,13 @@
+.photo-grid__heart {
+  background: url(../../../images/Heart.svg) no-repeat;
+  background-size: cover;
+  width: calc(100vw/(1280/22));
+  height: calc(100vw/(1280/19));
+}
+
+@media screen and (max-width: 320px) {
+  .photo-grid__heart {
+    width: calc(100vw/(320/22));
+    height: calc(100vw/(320/19));
+  }
+}

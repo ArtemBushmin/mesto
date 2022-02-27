@@ -1,0 +1,26 @@
+.profile__button {
+  background: url(../../../images/Pen.svg) no-repeat;
+  margin: calc(100vw/(1280/40.75)) 0 0 calc(100vw/(1280/18));
+  width: calc(100vw/(1280/24));
+  height: calc(100vw/(1280/24));
+  border: calc(100vw/1280) solid #FFFFFF;
+  background-color: black;
+  margin: calc(100vw/(1280/40.75)) 0 0 calc(100vw/(1280/18));
+  background-position: center;
+  padding: 0;
+  background-size: 50% 50%;
+}
+
+.profile__button:hover {
+  opacity: 0.6;
+}
+
+
+@media screen and (max-width: 320px) {
+  .profile__button {
+    width: calc(100vw/(320/18));
+    height: calc(100vw/(320/18));
+    border: calc(100vw/320) solid #FFFFFF;
+    margin: calc(100vw/(320/8)) 0 0 calc(100vw/(320/10));
+  }
+}

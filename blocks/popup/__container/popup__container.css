@@ -1,0 +1,11 @@
+.popup__container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw/(1280/470));
+}
+
+@media screen and (max-width: 320px) {
+  .popup__container {
+    width: calc(100vw/(320/282));
+  }
+}

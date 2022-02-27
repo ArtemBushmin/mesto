@@ -1,0 +1,22 @@
+.photo-grid__name {
+  font-style: normal;
+  font-weight: 900;
+  font-size: calc(100vw/(1280/24));
+  line-height: calc(100vw/(1280/29));
+  width: calc(100vw/(1280/219));
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 320px) {
+  .photo-grid__name {
+    font-size: calc(100vw/(320/24));
+    line-height: calc(100vw/(320/29));
+    width: calc(100vw/(320/219));
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

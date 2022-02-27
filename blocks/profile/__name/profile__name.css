@@ -1,0 +1,25 @@
+.profile__name {
+  margin: calc(100vw/(1280/25.75)) 0 0 calc(100vw/(1280/3.75));
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(100vw/(1280/42));
+  line-height: calc(100vw/(1280/48));
+  width: calc(100vw/(1280/294));
+  color: #FFFFFF;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 320px) {
+  .profile__name {
+    margin: 0 0 0 calc(100vw/(320/65));
+    font-size: calc(100vw/(320/27));
+    line-height: calc(100vw/(320/33));
+    width: calc(100vw/(320/189));
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

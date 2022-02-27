@@ -1,0 +1,22 @@
+.popup__close {
+  border: none;
+  background: url(../../../images/Close_Icon.svg) no-repeat;
+  background-size: cover;
+  width: calc(100vw/(1280/32));
+  height: calc(100vw/(1280/32));
+  margin-left: calc(100vw/(1280/438));
+  margin-bottom: calc(100vw/(1280/8));
+}
+
+.popup__close:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 320px) {
+  .popup__close {
+    width: calc(100vw/(320/20));
+    height: calc(100vw/(320/20));
+    margin-left: calc(100vw/(320/262));
+    margin-bottom: calc(100vw/(320/16));
+  }
+}

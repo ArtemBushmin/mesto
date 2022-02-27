@@ -1,0 +1,13 @@
+.profile {
+  display: grid;
+  padding: calc(100vw/(1280/36.25)) calc(100vw/(1280/200)) 0 calc(100vw/(1280/177.5));
+  grid-template-columns: calc(100vw/(1280/168.75)) repeat(2, max-content);
+}
+
+@media screen and (max-width: 320px) {
+  .profile {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, max-content);
+    padding: 0;
+  }
+}

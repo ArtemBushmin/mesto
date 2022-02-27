@@ -1,0 +1,20 @@
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-template-rows: repeat(2, max-content);
+  row-gap: calc(100vw/(1280/20));
+  column-gap: calc(100vw/(1280/17));
+  margin: 0 auto;
+  padding-top: calc(100vw/(1280/47.25));
+  width: calc(100vw/(1280/880));
+}
+
+@media screen and (max-width: 320px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, max-content);
+    row-gap: calc(100vw/(320/20));
+    padding-top: calc(100vw/(320/36));
+    width: calc(100vw/(320/282));
+  }
+}

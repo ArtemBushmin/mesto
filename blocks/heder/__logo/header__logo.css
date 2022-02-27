@@ -1,0 +1,13 @@
+.header__logo {
+  object-fit: contain;
+  width: calc(100vw/(1280/142));
+  height: calc(100vw/(1280/33));
+}
+
+@media screen and (max-width: 320px) {
+  .header__logo {
+    width: calc(100vw/(320/103.74));
+    height: calc(100vw/(320/24.4));
+    margin-left: calc(100vw/(320/27));
+  }
+}
