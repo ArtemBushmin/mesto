@@ -5,7 +5,6 @@
   height: calc(100vw/(1280/24));
   border: calc(100vw/1280) solid #FFFFFF;
   background-color: black;
-  margin: calc(100vw/(1280/40.75)) 0 0 calc(100vw/(1280/18));
   background-position: center;
   padding: 0;
   background-size: 50% 50%;
