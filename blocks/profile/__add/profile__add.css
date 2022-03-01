@@ -1,24 +1,23 @@
 .profile__add {
   background: url(../../../images/Plus.svg) no-repeat;
   background-size: 50% 50%;
-  width: calc(100vw/(1280/150));
-  height: calc(100vw/(1280/50));
-  border: calc(100vw/(1280/2)) solid #FFFFFF;
-  border-radius: calc(100vw/(1280/2));
+  width: 150px;
+  height: 50px;
+  border: 2px solid #FFFFFF;
+  border-radius: 2px;
   background-position: center;
-  margin: calc(100vw/(1280/38.75)) 0 0 calc(100vw/(1280/244));
+  justify-self: end;
+  align-self: center;
 }
 
 .profile__add:hover {
   opacity: 0.6;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 880px) {
   .profile__add {
-    width: calc(100vw/(320/282));
-    height: calc(100vw/(320/50));
-    border: calc(100vw/(320/2)) solid #FFFFFF;
-    border-radius: calc(100vw/(320/2));
+    width: 282px;
+    height: 50px;
     margin: calc(100vw/(320/33)) auto 0;
   }
 }

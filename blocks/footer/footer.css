@@ -2,15 +2,14 @@
   display: grid;
   grid-template-columns: max-content;
   grid-template-rows: max-content;
-  margin: 0 auto;
-  width: calc(100vw/(1280/880));
   padding: calc(100vw/(1280/67)) 0 calc(100vw/(1280/60));
   align-items: end;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 581px) {
   .footer {
-    width: calc(100vw/(320/282));
+    max-width: 282px;
     padding: calc(100vw/(320/48)) 0 calc(100vw/(320/36));
+    margin: 0 auto;
   }
 }

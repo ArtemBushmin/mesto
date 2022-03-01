@@ -2,18 +2,13 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: max-content;
-  margin: 0 auto;
-  width: calc(100vw/(1280/880));
   padding: calc(100vw/(1280/45)) 0 calc(100vw/(1280/41));
   align-items: end;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
 @media screen and (max-width: 320px) {
   .header {
-    width: 100%;
     padding: calc(100vw/(320/28)) 0 calc(100vw/(320/27));
-    margin: 0;
-    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   }
 }

@@ -2,14 +2,14 @@
   margin: 0;
   font-style: normal;
   font-weight: normal;
-  font-size: calc(100vw/(1280/18));
-  line-height: calc(100vw/(1280/22));
+  font-size: 18px;
+  line-height: 22px;
   color: #545454;
 }
 
 @media screen and (max-width: 320px) {
   .footer__copyright {
-    font-size: calc(100vw/(320/14));
-    line-height: calc(100vw/(320/17));
+    font-size: 14px;
+    line-height: 17px;
   }
 }

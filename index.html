@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Место</title>
 </head>
-<body>
-  <div class="root">
+<body class="root">
+  <div class="page">
     <header class="header">
       <img class="header__logo" src="./images/Vector.svg" alt="Логотип Место">
     </header>
@@ -16,70 +16,70 @@
       <div class="profile__info">
         <div class="profile__data">
           <h1 id="name" class="profile__name">Жак-Ив Кусто</h1>
-          <button class="profile__button"></button>
+          <button type="button" class="profile__button"></button>
         </div>
         <p id="job" class="profile__profession">Исследователь океана</p>
       </div>
-      <div class="profile__add"></div>
+      <button type="button" class="profile__add"></button>
     </section>
     <section class="photo-grid" aria-label="Фото мест">
-      <div class="photo-grid__item">
+      <article class="photo-grid__item">
         <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="photo-grid__image">
         <div class="photo-grid__signature">
-          <p class="photo-grid__name">Карачаевск</p>
-          <div class="photo-grid__heart"></div>
+          <h2 class="photo-grid__name">Карачаевск</h2>
+          <button type="button" class="photo-grid__heart"></button>
         </div>
-      </div>
-      <div class="photo-grid__item">
+      </article>
+      <article class="photo-grid__item">
         <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус" class="photo-grid__image">
         <div class="photo-grid__signature">
-          <p class="photo-grid__name">Гора Эльбрус</p>
-          <div class="photo-grid__heart"></div>
+          <h2 class="photo-grid__name">Гора Эльбрус</h2>
+          <button type="button" class="photo-grid__heart"></button>
         </div>
-      </div>
-      <div class="photo-grid__item">
+      </article>
+      <article class="photo-grid__item">
         <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай" class="photo-grid__image">
         <div class="photo-grid__signature">
-          <p class="photo-grid__name">Домбай</p>
-          <div class="photo-grid__heart"></div>
+          <h2 class="photo-grid__name">Домбай</h2>
+          <button type="button" class="photo-grid__heart"></button>
         </div>
-      </div>
-      <div class="photo-grid__item">
+      </article>
+      <article class="photo-grid__item">
         <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус" class="photo-grid__image">
         <div class="photo-grid__signature">
-          <p class="photo-grid__name">Гора Эльбрус</p>
-          <div class="photo-grid__heart"></div>
+          <h2 class="photo-grid__name">Гора Эльбрус</h2>
+          <button type="button" class="photo-grid__heart"></button>
         </div>
-      </div>
-      <div class="photo-grid__item">
+      </article>
+      <article class="photo-grid__item">
         <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай" class="photo-grid__image">
         <div class="photo-grid__signature">
-          <p class="photo-grid__name">Домбай</p>
-          <div class="photo-grid__heart"></div>
+          <h2 class="photo-grid__name">Домбай</h2>
+          <button type="button" class="photo-grid__heart"></button>
         </div>
-      </div>
-      <div class="photo-grid__item">
+      </article>
+      <article class="photo-grid__item">
         <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="photo-grid__image">
         <div class="photo-grid__signature">
-          <p class="photo-grid__name">Карачаевск</p>
-          <div class="photo-grid__heart"></div>
+          <h2 class="photo-grid__name">Карачаевск</h2>
+          <button type="button" class="photo-grid__heart"></button>
         </div>
-      </div>
+      </article>
     </section>
-    <section class="footer" aria-label="Подвал">
+    <footer class="footer" aria-label="Подвал">
       <p class="footer__copyright">© 2022. Bushmin Artem</p>
-    </section>
-    <form class="popup">
+    </footer>
+    <div class="popup">
       <div class="popup__container">
-        <div class="popup__close"></div>
-        <div class="popup__form">
-          <p class="popup__header">Редактировать профиль</p>
-          <input type="text" class="popup__name">
-          <input type="text" class="popup__job">
+        <button type="button" class="popup__close"></button>
+        <form name="profile-form" class="popup__form">
+          <h2 class="popup__header">Редактировать профиль</h2>
+          <input id="name" type="text" class="popup__input popup__input_type_name">
+          <input id="job" type="text" class="popup__input popup__input_type_job">
           <button type="submit" class="popup__submit">Сохранить</button>
-        </div>
+        </form>
       </div>
-    </form>
+    </div>
   </div>
   <script src="./scripts/script.js"></script>
 </body>

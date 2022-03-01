@@ -3,4 +3,5 @@
   -moz-osx-font-smoothing: grayscale;
   background: #000;
   font-family: "Inter", Arial, sans-serif;
+  min-width: 320px;
 }

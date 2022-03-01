@@ -1,12 +1,6 @@
 .photo-grid__signature {
   display: flex;
-  margin: calc(100vw/(1280/25)) calc(100vw/(1280/15)) calc(100vw/(1280/31)) calc(100vw/(1280/21));
+  margin: 25px 15px 31px 21px;
   justify-content: space-between;
   align-items: center;
-}
-
-@media screen and (max-width: 320px) {
-  .photo-grid__signature {
-    margin: calc(100vw/(320/25)) calc(100vw/(320/15)) calc(100vw/(320/31)) calc(100vw/(320/21));
-  }
 }

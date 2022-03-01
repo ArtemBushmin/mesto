@@ -1,19 +1,19 @@
 .profile__profession {
-  margin: 0 0 calc(100vw/(1280/28.75)) calc(100vw/(1280/3.75));
+  margin: calc(100vw/(1280/7)) 0 0 0;
   font-style: normal;
   font-weight: normal;
-  font-size: calc(100vw/(1280/18));
-  line-height: calc(100vw/(1280/22));
-  width: calc(100vw/(1280/336));
+  font-size: 18px;
+  line-height: 22px;
+  max-width: 336px;
   color: #FFFFFF;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 880px) {
   .profile__profession {
     width: calc(100vw/(320/282));
     margin: calc(100vw/(320/7)) auto 0;
-    font-size: calc(100vw/(320/14));
-    line-height: calc(100vw/(320/17));
+    font-size: 14px;
+    line-height: 17px;
     text-align: center;
   }
 }

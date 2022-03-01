@@ -1,13 +1,15 @@
 .photo-grid__heart {
   background: url(../../../images/Heart.svg) no-repeat;
   background-size: cover;
-  width: calc(100vw/(1280/22));
-  height: calc(100vw/(1280/19));
+  width: 22px;
+  height: 19px;
+  border: none;
 }
 
-@media screen and (max-width: 320px) {
-  .photo-grid__heart {
-    width: calc(100vw/(320/22));
-    height: calc(100vw/(320/19));
-  }
+.photo-grid__heart:hover {
+  opacity: 0.6;
+}
+
+.photo-grid__heart:active {
+  background: url(../../../images/Heart_black.svg) no-repeat;
 }
