@@ -1,23 +1,18 @@
 .popup__input {
-  margin: 0 auto calc(100vw/(1280/30));
+  margin: 0 auto 30px;
   border: none;
-  border-bottom: calc(100vw/1280) solid rgba(0, 0, 0, 0.2);
-  padding: 0 0 calc(100vw/(1280/13)) 0;
-  width: calc(100vw/(1280/358));
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 0 13px 0;
+  width: 358px;
   font-style: normal;
   font-weight: normal;
-  font-size: calc(100vw/(1280/14));
-  line-height: calc(100vw/(1280/17));
+  font-size: 14px;
+  line-height: 17px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
   .popup__input {
-    margin: 0 auto calc(100vw/(320/30));
-    border-bottom: calc(100vw/320) solid rgba(0, 0, 0, 0.2);
-    padding: 0 0 calc(100vw/(320/13)) 0;
-    width: calc(100vw/(320/238));
-    font-size: calc(100vw/(320/14));
-    line-height: calc(100vw/(320/17));
+    width: 238px;
   }
 }
 

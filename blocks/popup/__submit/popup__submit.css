@@ -1,14 +1,14 @@
 .popup__submit {
-  margin: calc(100vw/(1280/48)) auto calc(100vw/(1280/37));
-  padding: calc(100vw/(1280/14)) 0;
-  width: calc(100vw/(1280/358));
+  margin: 48px auto 37px;
+  padding: 14px 0;
+  width: 358px;
   background: #000000;
   border: 0;
-  border-radius: calc(100vw/(1280/2));
+  border-radius: 2px;
   font-style: normal;
   font-weight: normal;
-  font-size: calc(100vw/(1280/18));
-  line-height: calc(100vw/(1280/22));
+  font-size: 18px;
+  line-height: 22px;
   text-align: center;
   color: #FFFFFF;
 }
@@ -17,13 +17,11 @@
   opacity: 0.8;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
   .popup__submit {
-    margin: calc(100vw/(320/45)) auto calc(100vw/(320/25));
-    padding: calc(100vw/(320/14)) 0;
-    width: calc(100vw/(320/238));
-    border-radius: calc(100vw/(320/2));
-    font-size: calc(100vw/(320/14));
-    line-height: calc(100vw/(320/17));
+    margin: 45px auto 25px;
+    width: 238px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }
