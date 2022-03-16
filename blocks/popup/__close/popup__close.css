@@ -4,7 +4,9 @@
   background-size: contain;
   width: 32px;
   height: 32px;
-  margin-left: 438px;
+  position: absolute;
+  top: -40px;
+  right: -40px;
   margin-bottom: 8px;
 }
 
@@ -18,5 +20,7 @@
     height: 20px;
     margin-left: 262px;
     margin-bottom: 16px;
+    top: -36px;
+    right: 0;
   }
 }
