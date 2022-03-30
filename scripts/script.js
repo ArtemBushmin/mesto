@@ -111,6 +111,7 @@ function closeFunc(closeElement) {
     closeElement.querySelector('.popup__submit').classList.remove('popup__submit_disabled');
   } else{
     closeElement.querySelector('.popup__submit').classList.add('popup__submit_disabled');
+    closeElement.querySelector('.popup__submit').setAttribute('disabled', false);
   }
 }
 
