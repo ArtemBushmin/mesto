@@ -44,6 +44,9 @@ const initialCards = [
   }
 ];
 
+nameInput.value = authorName.textContent;
+jobInput.value = authorJob.textContent;
+
 function createCard (name, link) {
   const card = cardTemplate.querySelector('.photo-grid__item').cloneNode(true);
   const cardImage = card.querySelector('.photo-grid__image');
@@ -78,9 +81,9 @@ function startCards () {
 }
 
 function openProfileFunc() {
+  openPopup(formElement);
   nameInput.value = authorName.textContent;
   jobInput.value = authorJob.textContent;
-  openPopup(formElement);
 }
 
 function openAddFunc() {
@@ -90,10 +93,25 @@ function openAddFunc() {
 
 function openPopup (openElement) {
   openElement.classList.add('popup_opened');
+  openElement.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup')) {
+      closeFunc(openElement);
+  }});
+  document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
+      closeFunc(openElement);
+  }});
 }
 
 function closeFunc(closeElement) {
   closeElement.classList.remove('popup_opened');
+  closeElement.querySelectorAll('.popup__error').forEach ((element) => {element.classList.remove('popup__error_visible');});
+  closeElement.querySelectorAll('.popup__input').forEach ((element) => {element.classList.remove('popup__input_type_error');});
+  if(closeElement === formElement){
+    closeElement.querySelector('.popup__submit').classList.remove('popup__submit_disabled');
+  } else{
+    closeElement.querySelector('.popup__submit').classList.add('popup__submit_disabled');
+  }
 }
 
 function formSubmitHandler (evt) {

@@ -30,10 +30,12 @@
     <div id="popupProfile" class="popup">
       <div class="popup__container">
         <button id="closeProfile" type="button" class="popup__close"></button>
-        <form name="profile-form" class="popup__form">
+        <form name="profile-form" class="popup__form" novalidate>
           <h2 class="popup__header">Редактировать профиль</h2>
-          <input type="text" class="popup__input popup__input_type_name" placeholder="Имя">
-          <input type="text" class="popup__input popup__input_type_job" placeholder="Профессиональная деятельность">
+          <input id="nameInput" type="text" class="popup__input popup__input_type_name" placeholder="Имя" required minlength="2" maxlength="40">
+          <span class="popup__error popup__error_position_name" id="nameInput-error"></span>
+          <input id="jobInput" type="text" class="popup__input popup__input_type_job" placeholder="Профессиональная деятельность" required minlength="2" maxlength="200">
+          <span class="popup__error popup__error_position_job" id="jobInput-error"></span>
           <button type="submit" class="popup__submit">Сохранить</button>
         </form>
       </div>
@@ -41,10 +43,12 @@
     <div id="popupAdd" class="popup">
       <div class="popup__container">
         <button id="closeAdd" type="button" class="popup__close"></button>
-        <form id="add-form" name="add-form" class="popup__form">
+        <form id="add-form" name="add-form" class="popup__form" novalidate>
           <h2 class="popup__header">Новое место</h2>
-          <input type="text" class="popup__input popup__input_type_nameCard" placeholder="Название">
-          <input type="text" class="popup__input popup__input_type_linkCard" placeholder="Ссылка на картинку">
+          <input id="place" type="text" class="popup__input popup__input_type_nameCard" placeholder="Название" required minlength="2" maxlength="40">
+          <span class="popup__error popup__error_position_place" id="place-error"></span>
+          <input id="link" type="url" class="popup__input popup__input_type_linkCard" placeholder="Ссылка на картинку" required>
+          <span class="popup__error popup__error_position_link" id="link-error"></span>
           <button type="submit" class="popup__submit">Сохранить</button>
         </form>
       </div>
@@ -70,5 +74,6 @@
     </article>
   </template>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>
