@@ -2,3 +2,10 @@
   top: 132px;
   left: 36px;
 }
+
+@media screen and (max-width: 500px) {
+  .popup__error_position_place {
+    top: 152px;
+    left: 22px;
+  }
+}
