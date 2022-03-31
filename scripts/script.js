@@ -109,6 +109,7 @@ function closeFunc(closeElement) {
   closeElement.querySelectorAll('.popup__input').forEach ((element) => {element.classList.remove('popup__input_type_error');});
   if(closeElement === formElement){
     closeElement.querySelector('.popup__submit').classList.remove('popup__submit_disabled');
+    closeElement.querySelector('.popup__submit').removeAttribute('disabled', true);
   } else{
     closeElement.querySelector('.popup__submit').classList.add('popup__submit_disabled');
     closeElement.querySelector('.popup__submit').setAttribute('disabled', false);
