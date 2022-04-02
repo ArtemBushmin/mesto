@@ -37,6 +37,12 @@ function toggleButtonState(inputList, buttonElement, inactiveButtonClass){
 }
 }
 
+function resetErrorForm (closeElement){
+  closeElement.querySelectorAll('.popup__error').forEach ((element) => {element.classList.remove('popup__error_visible');});
+  closeElement.querySelectorAll('.popup__input').forEach ((element) => {element.classList.remove('popup__input_type_error');});
+  //в этом месте функция toggleButtonState() отрабатывает не так как нужно
+}
+
 const setEventListeners = (formElement, { inputSelector, submitButtonSelector, inactiveButtonClass, inputErrorClass, errorClass, ...rest }) => {
   const inputList = Array.from(formElement.querySelectorAll(inputSelector));
   const buttonElement = formElement.querySelector(submitButtonSelector);

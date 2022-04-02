@@ -85,11 +85,17 @@ function openProfileFunc() {
   openPopup(formProfileElement);
   nameInput.value = authorName.textContent;
   jobInput.value = authorJob.textContent;
+  const inputList = Array.from(formProfileElement.querySelectorAll('.popup__input'));
+  const buttonElement = formProfileElement.querySelector('.popup__submit');
+  toggleButtonState(inputList, buttonElement, 'popup__submit_disabled');
 }
 
 function openAddFunc() {
   popupFormAdd.reset();
   openPopup(formAddCard);
+  const inputList = Array.from(formAddCard.querySelectorAll('.popup__input'));
+  const buttonElement = formAddCard.querySelector('.popup__submit');
+  toggleButtonState(inputList, buttonElement, 'popup__submit_disabled');
 }
 
 function openPopup (openElement) {
@@ -122,25 +128,13 @@ function closeByOverlay(evt) {
 
 function closePopup(closeElement) {
   closeElement.classList.remove('popup_opened');
-  openElement.removeEventListener('click', closeByOverlay);
+  closeElement.removeEventListener('click', closeByOverlay);
   document.removeEventListener('keydown', closeByEsc);
 }
 
 function closePopupForm(closeElement){
   resetErrorForm (closeElement);
   closePopup(closeElement);
-}
-
-function resetErrorForm (closeElement){
-  closeElement.querySelectorAll('.popup__error').forEach ((element) => {element.classList.remove('popup__error_visible');});
-  closeElement.querySelectorAll('.popup__input').forEach ((element) => {element.classList.remove('popup__input_type_error');});
-  if(closeElement === formProfileElement){
-    closeElement.querySelector('.popup__submit').classList.remove('popup__submit_disabled');
-    closeElement.querySelector('.popup__submit').removeAttribute('disabled', true);
-  } else{
-    closeElement.querySelector('.popup__submit').classList.add('popup__submit_disabled');
-    closeElement.querySelector('.popup__submit').setAttribute('disabled', false);
-  }
 }
 
 function submitProfileForm (evt) {
