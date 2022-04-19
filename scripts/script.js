@@ -109,7 +109,6 @@ class Card {
   }
 }
 
-
 class FormValidator {
   constructor(data, form) {
     this._data = data;
@@ -146,7 +145,7 @@ class FormValidator {
 
   _toggleButtonState(){
     this._buttonElement = this._form.querySelector(this._data.submitButtonSelector);
-    if (this._hasInvalidInput()) {
+    if (this._hasInvalidInput(this._inputList)) {
       this._buttonElement.classList.add(this._data.inactiveButtonClass);
       this._buttonElement.setAttribute('disabled', true);
   } else {
@@ -240,7 +239,7 @@ function openAddFunc() {
   toggleButtonState(inputList, buttonElement, 'popup__submit_disabled');
 }
 
-export function openPopup (openElement) {
+function openPopup (openElement) {
   openElement.classList.add('popup_opened');
   openElement.addEventListener('click', closeByOverlay);
   document.addEventListener('keydown', closeByEsc);
