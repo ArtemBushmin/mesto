@@ -1,3 +1,6 @@
+import FormValidator from './FormValidator.js';
+import Card from './Card.js';
+
 const ESC_CODE = 'Escape';
 const openProfileBtn = document.querySelector('.profile__button');
 const closeProfileBtn = document.getElementById('closeProfile');
@@ -15,11 +18,12 @@ const closeAddBtn = document.getElementById('closeAdd');
 const formAddCard = document.getElementById('popupAdd');
 const nameAddCard = document.querySelector('.popup__input_type_nameCard');
 const linkAddCard = document.querySelector('.popup__input_type_linkCard');
-const popupImage = document.querySelector('.popup__image');
-const popupCaption = document.querySelector('.popup__caption');
+export const popupImage = document.querySelector('.popup__image');
+export const popupCaption = document.querySelector('.popup__caption');
 const closeImageBtn = document.getElementById('closeImage');
-const popupImageOpen = document.getElementById('popupImage');
+export const popupImageOpen = document.getElementById('popupImage');
 const popupFormAdd = document.getElementById('add-form');
+
 const initialCards = [
   {
     name: 'Архыз',
@@ -59,117 +63,9 @@ const validationSetting = {
 nameInput.value = authorName.textContent;
 jobInput.value = authorJob.textContent;
 
-class Card {
-  constructor(data, cardSelector) {
-    this._name = data.name;
-    this._link = data.link;
-    this._cardSelector = cardSelector;
-  }
-
-  _getTemplate() {
-    const cardElement = document
-      .querySelector(this._cardSelector)
-      .content
-      .querySelector('.photo-grid__item')
-      .cloneNode(true);
-
-    return cardElement;
-  }
-
-  _popupImageAction() {
-    openPopup(popupImageOpen);
-    popupImage.src = this._link;
-    popupImage.alt = this._name;
-    popupCaption.textContent = this._name;
-  }
-
-  _setEventListeners() {
-    this._element.querySelector('.photo-grid__heart').addEventListener('click', (evt) => {
-      evt.target.classList.toggle('photo-grid__heart_active');
-    });
-
-    this._element.querySelector('.photo-grid__delete').addEventListener('click', (evt) => {
-      evt.target.closest('.photo-grid__item').remove();
-    });
-
-    this._element.querySelector('.photo-grid__image').addEventListener('click', () => {
-      this._popupImageAction();
-    });
-  }
-
-  generateCard() {
-    this._element = this._getTemplate();
-    this._setEventListeners();
-
-    this._element.querySelector('.photo-grid__image').src = this._link;
-    this._element.querySelector('.photo-grid__image').alt = this._name;
-    this._element.querySelector('.photo-grid__name').textContent = this._name;
-
-    return this._element;
-  }
-}
-
-class FormValidator {
-  constructor(data, form) {
-    this._data = data;
-    this._form = form;
-  }
-
-  _showInputError (inputElement) {
-    const errorElement = this._form.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.add(this._data.inputErrorClass);
-    errorElement.textContent = inputElement.validationMessage;
-    errorElement.classList.add(this._data.errorClass);
-  }
-
-  _hideInputError (inputElement) {
-    const errorElement = this._form.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.remove(this._data.inputErrorClass);
-    errorElement.classList.remove(this._data.errorClass);
-    errorElement.textContent = '';
-  }
-
-  _checkInputValidity (inputElement) {
-    if (!inputElement.validity.valid) {
-      this._showInputError(inputElement);
-    } else {
-      this._hideInputError(inputElement);
-    }
-  }
-
-  _hasInvalidInput(){
-    return this._inputList.some((inputElement) => {
-      return !inputElement.validity.valid;
-    });
-  }
-
-  _toggleButtonState(){
-    this._buttonElement = this._form.querySelector(this._data.submitButtonSelector);
-    if (this._hasInvalidInput(this._inputList)) {
-      this._buttonElement.classList.add(this._data.inactiveButtonClass);
-      this._buttonElement.setAttribute('disabled', true);
-  } else {
-      this._buttonElement.classList.remove(this._data.inactiveButtonClass);
-      this._buttonElement.removeAttribute('disabled', true);
-
-  }
-  }
-
-  enableValidation() {
-    this._inputList = Array.from(this._form.querySelectorAll(this._data.inputSelector));
-    this._toggleButtonState();
-
-    this._inputList.forEach((inputElement) => {
-      inputElement.addEventListener('input', () => {
-        this._checkInputValidity(inputElement);
-        this._toggleButtonState();
-      });
-    });
-  }
-}
-
 const formValidProfile = new FormValidator(validationSetting, formProfile);
 const formValidCard = new FormValidator(validationSetting, formCard);
+
 /*
 function createCard (name, link) {
   const card = cardTemplate.querySelector('.photo-grid__item').cloneNode(true);
@@ -239,7 +135,7 @@ function openAddFunc() {
   toggleButtonState(inputList, buttonElement, 'popup__submit_disabled');
 }
 
-function openPopup (openElement) {
+export function openPopup (openElement) {
   openElement.classList.add('popup_opened');
   openElement.addEventListener('click', closeByOverlay);
   document.addEventListener('keydown', closeByEsc);
