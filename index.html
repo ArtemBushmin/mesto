@@ -30,7 +30,7 @@
     <div id="popupProfile" class="popup">
       <div class="popup__container">
         <button id="closeProfile" type="button" class="popup__close"></button>
-        <form name="profile-form" class="popup__form" novalidate>
+        <form id="profile-form" name="profile-form" class="popup__form" novalidate>
           <h2 class="popup__header">Редактировать профиль</h2>
           <input id="nameInput" type="text" class="popup__input popup__input_type_name" placeholder="Имя" required minlength="2" maxlength="40">
           <span class="popup__error popup__error_position_name" id="nameInput-error"></span>
@@ -73,7 +73,8 @@
       </div>
     </article>
   </template>
-  <script src="./scripts/script.js"></script>
-  <script src="./scripts/validate.js"></script>
+  <script src="./scripts/Card.js"></script>
+  <script src="./scripts/index.js"></script>
+  <script src="./scripts/FormValidator.js"></script>
 </body>
 </html>
