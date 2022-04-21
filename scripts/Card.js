@@ -18,19 +18,24 @@ export default class Card {
   }
 
   _popupImageAction() {
-    openPopup(popupImageOpen);
     popupImage.src = this._link;
     popupImage.alt = this._name;
     popupCaption.textContent = this._name;
+    openPopup(popupImageOpen);
+  }
+
+  _handleLikeButton(evt) {
+    this._likeButton.classList.toggle('photo-grid__heart_active');
   }
 
   _setEventListeners() {
-    this._element.querySelector('.photo-grid__heart').addEventListener('click', (evt) => {
-      evt.target.classList.toggle('photo-grid__heart_active');
+    this._likeButton.addEventListener('click', (evt) => {
+      this._handleLikeButton(evt);
     });
 
     this._element.querySelector('.photo-grid__delete').addEventListener('click', (evt) => {
-      evt.target.closest('.photo-grid__item').remove();
+      this._element.remove();
+      this._element = null;
     });
 
     this._element.querySelector('.photo-grid__image').addEventListener('click', () => {
@@ -40,6 +45,7 @@ export default class Card {
 
   generateCard() {
     this._element = this._getTemplate();
+    this._likeButton = this._element.querySelector('.photo-grid__heart');
     this._setEventListeners();
 
     this._element.querySelector('.photo-grid__image').src = this._link;
