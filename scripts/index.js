@@ -62,28 +62,28 @@ const validationSetting = {
 const formValidProfile = new FormValidator(validationSetting, formProfile);
 const formValidCard = new FormValidator(validationSetting, formCard);
 
-function addCard (container, cardElement) {
-  container.prepend(cardElement);
+function addCard (container, card) {
+  container.prepend(createCard (card));
 }
 
 function createCard (card) {
-  addCard(cardsContainer, new Card(card, '.card').generateCard());
+  return new Card(card, '.card').generateCard();
 }
 
 function startCards () {
-  initialCards.forEach((card) => {createCard(card);});
+  initialCards.forEach((card) => {addCard(cardsContainer, card);});
 }
 
 function openProfileFunc() {
   nameInput.value = authorName.textContent;
   jobInput.value = authorJob.textContent;
-  formValidProfile.toggleButtonState();
+  formValidProfile.resetValidation();
   openPopup(formProfileElement);
 }
 
 function openAddFunc() {
   popupFormAdd.reset();
-  formValidCard.toggleButtonState();
+  formValidCard.resetValidation();
   openPopup(formAddCard);
 }
 
@@ -113,11 +113,6 @@ function closePopup(closeElement) {
   document.removeEventListener('keydown', closeByEsc);
 }
 
-function resetErrorForm (closeElement){
-  closeElement.querySelectorAll('.popup__error').forEach ((element) => {element.classList.remove('popup__error_visible');});
-  closeElement.querySelectorAll('.popup__input').forEach ((element) => {element.classList.remove('popup__input_type_error');});
-}
-
 function submitProfileForm (evt) {
   evt.preventDefault();
   authorName.textContent = nameInput.value;
@@ -127,7 +122,7 @@ function submitProfileForm (evt) {
 
 function formAddSubmitHandler (evt) {
   evt.preventDefault();
-  createCard ({name:nameAddCard.value, link:linkAddCard.value});
+  addCard (cardsContainer, {name:nameAddCard.value, link:linkAddCard.value});
   closePopup(formAddCard);
 }
 
@@ -135,12 +130,8 @@ startCards();
 
 formProfileElement.addEventListener('submit', submitProfileForm);
 formAddCard.addEventListener('submit', formAddSubmitHandler);
-profileOpenBtn.addEventListener('click', () => {
-  resetErrorForm (formProfileElement);
-  openProfileFunc();});
-addOpenBtn.addEventListener('click', () => {
-  resetErrorForm (formAddCard);
-  openAddFunc();});
+profileOpenBtn.addEventListener('click', () => {openProfileFunc()});
+addOpenBtn.addEventListener('click', () => {openAddFunc()});
 profileCloseBtn.addEventListener('click', () => {closePopup(formProfileElement)});
 addCloseBtn.addEventListener('click', () => {closePopup(formAddCard)});
 imageCloseBtn.addEventListener('click',() => {closePopup(popupImageOpen)});
