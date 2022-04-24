@@ -43,14 +43,11 @@ export default class FormValidator {
   }
   }
 
-  _hideError () {
-    this._form.querySelectorAll('.popup__error').forEach ((element) => {element.classList.remove('popup__error_visible');});
-    this._form.querySelectorAll('.popup__input').forEach ((element) => {element.classList.remove('popup__input_type_error');});
-  }
-
   resetValidation() {
     this._toggleButtonState();
-    this._hideError();
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement)
+    });
   }
 
   enableValidation() {
