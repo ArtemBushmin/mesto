@@ -1,10 +1,9 @@
-import {openPopup, popupImageOpen, popupImage, popupCaption} from './index.js';
-
 export default class Card {
-  constructor(data, cardSelector) {
+  constructor(data, cardSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -15,13 +14,6 @@ export default class Card {
       .cloneNode(true);
 
     return cardElement;
-  }
-
-  _popupImageAction() {
-    popupImage.src = this._link;
-    popupImage.alt = this._name;
-    popupCaption.textContent = this._name;
-    openPopup(popupImageOpen);
   }
 
   _handleLikeButton(evt) {
@@ -38,8 +30,8 @@ export default class Card {
       this._element = null;
     });
 
-    this._element.querySelector('.photo-grid__image').addEventListener('click', () => {
-      this._popupImageAction();
+    this._element.querySelector('.photo-grid__image').addEventListener('click', (evt) => {
+      this._handleCardClick(evt);
     });
   }
 

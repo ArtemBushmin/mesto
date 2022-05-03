@@ -2,17 +2,16 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="pages/index.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Место</title>
 </head>
 <body class="root">
   <div class="page">
     <header class="header">
-      <img class="header__logo" src="./images/Vector.svg" alt="Логотип Место">
+      <img class="header__logo" src="<%=require('./images/Vector.svg')%>" alt="Логотип Место">
     </header>
     <section class="profile">
-      <img class="profile__photo" src="./images/image.jpg" alt="Личное фото">
+      <img class="profile__photo" src="<%=require('./images/image.jpg')%>" alt="Личное фото">
       <div class="profile__info">
         <div class="profile__data">
           <h1 id="name" class="profile__name">Жак-Ив Кусто</h1>
@@ -65,7 +64,7 @@
   </div>
   <template class="card">
     <article class="photo-grid__item">
-      <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="photo-grid__image">
+      <img src="<%=require('./images/kirill-pershin-1088404-unsplash.jpg')%>" alt="Карачаевск" class="photo-grid__image">
       <button type="button" class="photo-grid__delete"></button>
       <div class="photo-grid__signature">
         <h2 class="photo-grid__name">Карачаевск</h2>
@@ -73,6 +72,5 @@
       </div>
     </article>
   </template>
-  <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>
