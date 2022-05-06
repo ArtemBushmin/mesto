@@ -1,4 +1,4 @@
-.photo-grid__delete {
+.element__delete {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -10,6 +10,6 @@
   cursor: pointer;
 }
 
-.photo-grid__delete:hover {
+.element__delete:hover {
   opacity: 0.6;
 }

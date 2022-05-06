@@ -1,4 +1,4 @@
-.photo-grid__heart {
+.element__heart {
   background: url(../../../images/Heart.svg) no-repeat;
   background-size: cover;
   width: 22px;
@@ -7,10 +7,10 @@
   cursor: pointer;
 }
 
-.photo-grid__heart:hover {
+.element__heart:hover {
   opacity: 0.6;
 }
 
-.photo-grid__heart:active {
+.element__heart:active {
   background: url(../../../images/Heart_black.svg) no-repeat;
 }

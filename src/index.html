@@ -29,7 +29,7 @@
     <div id="popupProfile" class="popup">
       <div class="popup__container">
         <button id="closeProfile" type="button" class="popup__close"></button>
-        <form id="profile-form" name="profile-form" class="popup__form" novalidate>
+        <form id="profile-form" name="profile-form" class="popup__form popup__profile" novalidate>
           <h2 class="popup__header">Редактировать профиль</h2>
           <input id="nameInput" type="text" class="popup__input popup__input_type_name" placeholder="Имя" required minlength="2" maxlength="40">
           <span class="popup__error popup__error_position_name" id="nameInput-error"></span>
@@ -42,7 +42,7 @@
     <div id="popupAdd" class="popup">
       <div class="popup__container">
         <button id="closeAdd" type="button" class="popup__close"></button>
-        <form id="add-form" name="add-form" class="popup__form" novalidate>
+        <form id="add-form" name="add-form" class="popup__form popup__add" novalidate>
           <h2 class="popup__header">Новое место</h2>
           <input id="place" type="text" class="popup__input popup__input_type_nameCard" placeholder="Название" required minlength="2" maxlength="40">
           <span class="popup__error popup__error_position_place" id="place-error"></span>
@@ -52,7 +52,7 @@
         </form>
       </div>
     </div>
-    <div id="popupImage" class="popup">
+    <div id="popupImage" class="popup popup_image_opacity">
       <div class="popup__container">
         <button id="closeImage" type="button" class="popup__close"></button>
         <figure class="popup__figure">
@@ -63,12 +63,12 @@
     </div>
   </div>
   <template class="card">
-    <article class="photo-grid__item">
-      <img src="<%=require('./images/kirill-pershin-1088404-unsplash.jpg')%>" alt="Карачаевск" class="photo-grid__image">
-      <button type="button" class="photo-grid__delete"></button>
-      <div class="photo-grid__signature">
-        <h2 class="photo-grid__name">Карачаевск</h2>
-        <button type="button" class="photo-grid__heart"></button>
+    <article class="element">
+      <img src="<%=require('./images/kirill-pershin-1088404-unsplash.jpg')%>" alt="Карачаевск" class="element__image">
+      <button type="button" class="element__delete"></button>
+      <div class="element__signature">
+        <h2 class="element__name">Карачаевск</h2>
+        <button type="button" class="element__heart"></button>
       </div>
     </article>
   </template>

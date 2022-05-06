@@ -5,11 +5,11 @@
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/photo-grid/photo-grid.css);
-@import url(../blocks/photo-grid/__image/photo-grid__image.css);
-@import url(../blocks/photo-grid/__item/photo-grid__item.css);
-@import url(../blocks/photo-grid/__signature/photo-grid__signature.css);
-@import url(../blocks/photo-grid/__name/photo-grid__name.css);
-@import url(../blocks/photo-grid/__heart/photo-grid__heart.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__signature/element__signature.css);
+@import url(../blocks/element/__name/element__name.css);
+@import url(../blocks/element/__heart/element__heart.css);
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__photo/profile__photo.css);
 @import url(../blocks/profile/__info/profile__info.css);
@@ -33,8 +33,8 @@
 @import url(../blocks/card/card.css);
 @import url(../blocks/popup/__input/_type/popup__input_type_nameCard.css);
 @import url(../blocks/popup/__input/_type/popup__input_type_linkCard.css);
-@import url(../blocks/photo-grid/__heart/_active/photo-grid__heart_active.css);
-@import url(../blocks/photo-grid/__delete/photo-grid__delete.css);
+@import url(../blocks/element/__heart/_active/element__heart_active.css);
+@import url(../blocks/element/__delete/element__delete.css);
 @import url(../blocks/popup/__figure/popup__figure.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__caption/popup__caption.css);
@@ -46,3 +46,6 @@
 @import url(../blocks/popup/__submit/_disabled/popup__submit_disabled.css);
 @import url(../blocks/popup/__error/_position/popup__error_position_place.css);
 @import url(../blocks/popup/__error/_position/popup__error_position_link.css);
+@import url(../blocks/popup/_image_opacity/popup_image_opacity.css);
+@import url(../blocks/popup/__profile/popup__profile.css);
+@import url(../blocks/popup/__add/popup__add.css);

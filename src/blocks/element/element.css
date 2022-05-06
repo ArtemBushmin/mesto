@@ -1,4 +1,4 @@
-.photo-grid__item {
+.element {
   display: flex;
   position: relative;
   flex-direction: column;
