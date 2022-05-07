@@ -37,9 +37,7 @@ export default class Card {
 
     this._element
       .querySelector(".element__image")
-      .addEventListener("click", (evt) => {
-        this._handleCardClick(evt);
-      });
+      .addEventListener("click", this._handleCardClick);
   }
 
   generateCard() {

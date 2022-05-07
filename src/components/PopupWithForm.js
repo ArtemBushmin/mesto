@@ -16,25 +16,8 @@ export default class PopupWithForm extends Popup {
   }
 
   setEventListeners() {
-    this._popupElementClose = this._popupElement.querySelector(".popup__close");
+    super.setEventListeners();
     this._popupForm = this._popupElement.querySelector(".popup__form");
-    this._popupElementClose.addEventListener("click", () => {
-      this.close();
-    });
-    document.addEventListener(
-      "keydown",
-      (evt) => {
-        this._handleEscClose(evt);
-      },
-      { once: true }
-    );
-    this._popupElement.addEventListener(
-      "click",
-      (evt) => {
-        this._closeByOverlay(evt);
-      },
-      { once: true }
-    );
     this._popupForm.addEventListener("submit", (evt) => {
       evt.preventDefault();
       this._submitForm(this._getInputValues());

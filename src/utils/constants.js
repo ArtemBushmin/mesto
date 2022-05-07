@@ -8,10 +8,7 @@ export const buttonOpenAddCardPopup = document.querySelector(".profile__add");
 import Card from "../components/Card.js";
 import { imagePopup } from "../pages/index.js";
 export const createCard = (cardData) => {
-  const card = new Card(cardData, ".card", (evt) => {
-    imagePopup.open(evt);
-    imagePopup.setEventListeners();
-  });
+  const card = new Card(cardData, ".card", () => imagePopup.open(cardData));
   return card.generateCard();
 };
 export const initialCards = [

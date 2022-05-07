@@ -22,6 +22,7 @@ import "./index.css";
 const formValidProfile = new FormValidator(validationSetting, formProfile);
 const formValidCard = new FormValidator(validationSetting, formCard);
 export const imagePopup = new PopupWithImage("popupImage");
+imagePopup.setEventListeners();
 const cardsList = new Section(
   {
     items: initialCards,
@@ -36,10 +37,10 @@ const profilePopup = new PopupWithForm("popupProfile", (data) => {
   userInfo.setUserInfo(data.nameInput, data.jobInput);
   profilePopup.close();
 });
-const addCardPopup = new PopupWithForm("popupAdd", (data) => {
+const popupAddCard = new PopupWithForm("popupAdd", (data) => {
   const newElement = createCard({ name: data.place, link: data.link });
   cardsList.addItem(newElement);
-  addCardPopup.close();
+  popupAddCard.close();
 });
 
 const userInfo = new UserInfo(".profile__name", ".profile__profession");
@@ -55,10 +56,10 @@ profileOpenBtn.addEventListener("click", () => {
 });
 buttonOpenAddCardPopup.addEventListener("click", () => {
   formValidCard.resetValidation();
-  addCardPopup.open();
+  popupAddCard.open();
 });
 
 formValidProfile.enableValidation();
 formValidCard.enableValidation();
 profilePopup.setEventListeners();
-addCardPopup.setEventListeners();
+popupAddCard.setEventListeners();
