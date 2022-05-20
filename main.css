@@ -9,11 +9,11 @@
 .element{background:#fff;border-radius:10px;display:flex;flex-direction:column;overflow:hidden;position:relative}
 .element__signature{align-items:center;display:flex;justify-content:space-between;margin:22px 20px 22px 21px}
 .element__name{font-size:24px;font-style:normal;font-weight:900;line-height:29px;margin:0;max-width:219px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.element__heart{background:url(1ad06e85f169668a1f36.svg) no-repeat;background-size:cover;border:none;cursor:pointer;height:19px;margin-bottom:3px;width:22px}.element__heart:hover{opacity:.6}.element__heart:active{background:url(35948469632d0421d697.svg) no-repeat}
+.element__heart{background:url(1ad06e85f169668a1f36.svg) no-repeat;background-size:cover;border:none;cursor:pointer;height:19px;margin-bottom:3px;width:22px}.element__heart:hover{opacity:.6}
 .profile{display:grid;grid-template-columns:repeat(2,-webkit-max-content) auto;grid-template-columns:repeat(2,max-content) auto;padding:2.83203vw 0 0;width:100%}@media screen and (max-width:880px){.profile{display:flex;flex-direction:column;margin:0 auto;max-width:320px;padding:0}}
-.profile__photo{border-radius:50%;max-height:127.5px;max-width:127.5px;-o-object-fit:cover;object-fit:cover}@media screen and (max-width:880px){.profile__photo{margin:11.95313vw 0 6.95313vw 99px}}
+.profile__photo{border-radius:50%;display:block;height:127.5px;-o-object-fit:cover;object-fit:cover;width:127.5px}
 .profile__info{display:flex;flex-direction:column;justify-content:center;margin-left:45px}@media screen and (max-width:880px){.profile__info{margin:0}}
-.profile__data{align-items:flex-end;display:flex}@media screen and (max-width:880px){.profile__data{margin-left:65px}}
+.profile__data{align-items:flex-end;display:flex}@media screen and (max-width:880px){.profile__data{justify-content:center}}
 .profile__name{color:#fff;font-size:42px;font-style:normal;font-weight:500;line-height:114%;margin:0;max-width:294px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@media screen and (max-width:880px){.profile__name{font-size:27px;line-height:33px;max-width:189px;text-align:center}}
 .profile__button{background:url(6c7bf05444b9793fdf6e.svg) no-repeat;background-color:#000;background-position:50%;background-size:50% 50%;border:1px solid #fff;cursor:pointer;height:24px;margin:0 0 .70313vw 1.40625vw;padding:0;width:24px}.profile__button:hover{opacity:.6}@media screen and (max-width:880px){.profile__button{align-self:center;height:18px;margin:0 0 0 10px;width:18px}}
 .profile__profession{color:#fff;font-size:18px;font-style:normal;font-weight:400;line-height:22px;margin:.54688vw 0 0;max-width:336px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@media screen and (max-width:880px){.profile__profession{font-size:14px;line-height:17px;margin:2.1875vw auto 0;text-align:center;width:88.125vw}}
@@ -55,4 +55,8 @@
 .popup__header_delete{margin-bottom:0}
 .popup__submit_delete{margin:38px auto 36px}
 .element__delete_noDelete{visibility:hidden}
+.profile__edit_photo{border:none;cursor:pointer;padding:0;position:relative}.profile__edit_photo:after{background:rgba(0,0,0,.8) url(93c771f5f8582261951d.png) no-repeat 50%;background-size:26px 26px;bottom:0;content:"";left:0;opacity:0;position:absolute;right:0;top:0;transition:opacity .2s ease-in}.profile__edit_photo:hover:after{opacity:1}@media (max-width:880px){.profile__edit_photo{margin:11.95313vw auto 6.95313vw}}
+.popup__submit_photo{margin:48px auto 36px}
+.popup__header_photo{margin-bottom:54px}
+.popup__error_position_linkPhoto{left:36px;top:150px}@media screen and (max-width:500px){.popup__error_position_linkPhoto{left:22px;top:170px}}
 
