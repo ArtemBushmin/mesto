@@ -1,13 +1,7 @@
 .profile__photo {
+  display: block;
   object-fit: cover;
-  max-width: 127.5px;
-  max-height: 127.5px;
+  width: 127.5px;
+  height: 127.5px;
   border-radius: 50%;
-}
-
-@media screen and (max-width: 880px) {
-  .profile__photo {
-    margin: calc(100vw/(320/38.25)) 0 calc(100vw/(320/22.25)) 99px;
-
-  }
 }

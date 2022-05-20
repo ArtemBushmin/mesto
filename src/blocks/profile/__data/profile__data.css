@@ -5,6 +5,6 @@
 
 @media screen and (max-width: 880px) {
   .profile__data {
-    margin-left: 65px;
+    justify-content: center;
   }
 }

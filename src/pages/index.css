@@ -49,3 +49,13 @@
 @import url(../blocks/popup/_image_opacity/popup_image_opacity.css);
 @import url(../blocks/popup/__profile/popup__profile.css);
 @import url(../blocks/popup/__add/popup__add.css);
+@import url(../blocks/element/__heart_counter/element__heart_counter.css);
+@import url(../blocks/element/__like/element__like.css);
+@import url(../blocks/popup/__delete/popup__delete.css);
+@import url(../blocks/popup/__header/_delete/popup__header_delete.css);
+@import url(../blocks/popup/__submit/_delete/popup__submit_delete.css);
+@import url(../blocks/element/__delete/_noDelete/element__delete_noDelete.css);
+@import url(../blocks/profile/__edit_photo/profile__edit_photo.css);
+@import url(../blocks/popup/__submit/_photo/popup__submit_photo.css);
+@import url(../blocks/popup/__header/_photo/popup__header_photo.css);
+@import url(../blocks/popup/__error/_position/popup__error_position_linkPhoto.css);
