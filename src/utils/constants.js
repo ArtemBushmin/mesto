@@ -6,7 +6,7 @@ export const formPhoto = document.querySelector(".popup__photo");
 export const nameInput = document.querySelector(".popup__input_type_name");
 export const jobInput = document.querySelector(".popup__input_type_job");
 export const buttonOpenAddCardPopup = document.querySelector(".profile__add");
-export const buttonOpenEditPhoto = document.querySelector(".profile__edit_photo");
+export const buttonOpenEditPhoto = document.querySelector(".profile__edit-photo");
 const setLike = (id, evt, counter) => {
   api
     .setLike(id)

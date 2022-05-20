@@ -1,11 +1,11 @@
-.profile__edit_photo {
+.profile__edit-photo {
     position: relative;
     border: none;
     padding: 0;
     cursor: pointer;
   }
 
-  .profile__edit_photo::after {
+  .profile__edit-photo::after {
     content: "";
     position: absolute;
     left: 0;
@@ -18,12 +18,12 @@
     transition: opacity 0.2s ease-in;
   }
 
-  .profile__edit_photo:hover::after {
+  .profile__edit-photo:hover::after {
     opacity: 1;
   }
 
   @media (max-width:880px) {
-    .profile__edit_photo {
+    .profile__edit-photo {
       margin: calc(100vw/(320/38.25)) auto calc(100vw/(320/22.25));
     }
   }
