@@ -55,7 +55,7 @@
 .popup__header_delete{margin-bottom:0}
 .popup__submit_delete{margin:38px auto 36px}
 .element__delete_noDelete{visibility:hidden}
-.profile__edit_photo{border:none;cursor:pointer;padding:0;position:relative}.profile__edit_photo:after{background:rgba(0,0,0,.8) url(93c771f5f8582261951d.png) no-repeat 50%;background-size:26px 26px;bottom:0;content:"";left:0;opacity:0;position:absolute;right:0;top:0;transition:opacity .2s ease-in}.profile__edit_photo:hover:after{opacity:1}@media (max-width:880px){.profile__edit_photo{margin:11.95313vw auto 6.95313vw}}
+.profile__edit-photo{border:none;cursor:pointer;padding:0;position:relative}.profile__edit-photo:after{background:rgba(0,0,0,.8) url(93c771f5f8582261951d.png) no-repeat 50%;background-size:26px 26px;bottom:0;content:"";left:0;opacity:0;position:absolute;right:0;top:0;transition:opacity .2s ease-in}.profile__edit-photo:hover:after{opacity:1}@media (max-width:880px){.profile__edit-photo{margin:11.95313vw auto 6.95313vw}}
 .popup__submit_photo{margin:48px auto 36px}
 .popup__header_photo{margin-bottom:54px}
 .popup__error_position_linkPhoto{left:36px;top:150px}@media screen and (max-width:500px){.popup__error_position_linkPhoto{left:22px;top:170px}}
