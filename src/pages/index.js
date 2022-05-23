@@ -8,7 +8,6 @@ import UserInfo from "../components/UserInfo.js";
 import Api from "../components/Api.js";
 import PopupDelete from "../components/PopupDelete.js";
 import {
-  createCard,
   ESC_CODE,
   profileOpenBtn,
   formProfile,
@@ -22,7 +21,36 @@ import {
 } from "../utils/constants.js";
 import "./index.css";
 
-export const api = new Api({
+const createCard = (cardData) => {
+  const card = new Card(
+    cardData,
+    ".card",
+    () => imagePopup.open(cardData),
+    (data) => {
+      popupDelete.open(cardData._id, data, card);
+    },
+    (id) => {
+      api
+        .setLike(id)
+        .then((res) => {
+          card.changeLike(res.likes.length);
+        })
+        .catch((err) => alert(err));
+    },
+    (id) => {
+      api
+        .removeLike(id)
+        .then((res) => {
+          card.changeLike(res.likes.length);
+        })
+        .catch((err) => alert(err));
+    },
+    userInfo.id
+  );
+  return card.generateCard();
+};
+
+const api = new Api({
   url: "https://mesto.nomoreparties.co/v1/cohort-41/",
   headers: {
     authorization: "4da7a4f9-8e09-46c7-a4cd-db9903075353",
@@ -46,24 +74,24 @@ const popupEditPhoto = new PopupWithForm("popupEditPhoto", (data) => {
 const formValidPhoto = new FormValidator(validationSetting, formPhoto);
 const formValidProfile = new FormValidator(validationSetting, formProfile);
 const formValidCard = new FormValidator(validationSetting, formCard);
-export const imagePopup = new PopupWithImage("popupImage");
+const imagePopup = new PopupWithImage("popupImage");
 imagePopup.setEventListeners();
 
 const cardsList = new Section(
-  {
-    items: api,
-    renderer: (item) => {
-      const element = createCard(item);
-      cardsList.addItem(element);
-    },
+  (item) => {
+    const element = createCard(item);
+    cardsList.addItem(element);
   },
   ".photo-grid"
 );
 
-cardsList.renderItems();
-
-export const popupDelete = new PopupDelete("popupDelete", (data) =>
+const popupDelete = new PopupDelete("popupDelete", (data) =>
   api.deleteCard(data)
+  .then(() => {
+        popupDelete.cardDelete.deleteCard();
+        popupDelete.close();
+      })
+      .catch((err) => alert(err))
 );
 popupDelete.setEventListeners();
 
@@ -72,7 +100,7 @@ const profilePopup = new PopupWithForm("popupProfile", (data) => {
   api
     .setUserInfo(data.nameInput, data.jobInput)
     .then((res) => {
-      userInfo.setUserInfo(res.name, res.about, res.avatar);
+      userInfo.setUserInfo(res.name, res.about, res.avatar, res._id);
       profilePopup.close();
     })
     .catch((err) => alert(err))
@@ -100,10 +128,11 @@ const userInfo = new UserInfo(
   ".profile__profession",
   ".profile__photo"
 );
-api
-  .getUserInfo()
-  .then((data) => {
-    userInfo.setUserInfo(data.name, data.about, data.avatar);
+
+Promise.all([api.getUserInfo(), api.getCardInfo()])
+  .then(([userData, userCard]) => {
+    userInfo.setUserInfo(userData.name, userData.about, userData.avatar, userData._id);
+    cardsList.renderItems(userCard);
   })
   .catch((err) => alert(err));
 

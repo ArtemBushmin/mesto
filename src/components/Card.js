@@ -5,7 +5,8 @@ export default class Card {
     handleCardClick,
     handleCardDelete,
     setLike,
-    removeLike
+    removeLike,
+    userId
   ) {
     this._name = data.name;
     this._link = data.link;
@@ -18,6 +19,7 @@ export default class Card {
     this._handleCardDelete = handleCardDelete;
     this._setLike = setLike;
     this._removeLike = removeLike;
+    this._userId = userId;
   }
 
   _getTemplate() {
@@ -29,13 +31,21 @@ export default class Card {
     return cardElement;
   }
 
+  changeLike (newCounter) {
+    this._likeButton.classList.toggle('element__heart_active');
+    this._likeButton.nextElementSibling.textContent = newCounter;
+  }
+
+  deleteCard () {
+    this._element.remove();
+    this._element = null;
+  }
+
   _handleLikeButton(evt) {
     if (!evt.target.classList.contains("element__heart_active")) {
-      this._setLike(this._idCard, evt, this._counter);
-      this._counter += 1;
+      this._setLike(this._idCard);
     } else {
-      this._removeLike(this._idCard, evt, this._counter);
-      this._counter -= 1;
+      this._removeLike(this._idCard);
     }
   }
 
@@ -70,7 +80,7 @@ export default class Card {
     this._element.querySelector(".element__heart_counter").textContent =
       this._counter;
 
-    if (!(this._idOwner === "047babc5ed40b0771a9e79c3")) {
+    if (!(this._idOwner === this._userId)) {
       this._element
         .querySelector(".element__delete")
         .classList.add("element__delete_noDelete");
@@ -78,7 +88,7 @@ export default class Card {
 
     if (
       this._likes.some(
-        (likeAuthor) => likeAuthor._id === "047babc5ed40b0771a9e79c3"
+        (likeAuthor) => likeAuthor._id === this._userId
       )
     ) {
       this._likeButton.classList.add("element__heart_active");

@@ -6,10 +6,11 @@ export default class PopupDelete extends Popup {
     this._delFunc = delFunc;
   }
 
-  open(id, card) {
+  open(id, card, cardDelete) {
     super.open();
     this._idCard = id;
     this._card = card;
+    this.cardDelete = cardDelete;
   }
 
   setEventListeners() {
@@ -18,9 +19,6 @@ export default class PopupDelete extends Popup {
     this._popupForm.addEventListener("submit", (evt) => {
       evt.preventDefault();
       this._delFunc(this._idCard);
-      this._card.remove();
-      this._card = null;
-      this.close();
     });
   }
 }

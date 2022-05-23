@@ -1,5 +1,4 @@
 import Popup from "./Popup.js";
-import Api from "./Api.js";
 
 export default class PopupWithForm extends Popup {
   constructor(selector, submitForm) {
