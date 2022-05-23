@@ -77,21 +77,19 @@ const formValidCard = new FormValidator(validationSetting, formCard);
 const imagePopup = new PopupWithImage("popupImage");
 imagePopup.setEventListeners();
 
-const cardsList = new Section(
-  (item) => {
-    const element = createCard(item);
-    cardsList.addItem(element);
-  },
-  ".photo-grid"
-);
+const cardsList = new Section((item) => {
+  const element = createCard(item);
+  cardsList.addItem(element);
+}, ".photo-grid");
 
 const popupDelete = new PopupDelete("popupDelete", (data) =>
-  api.deleteCard(data)
-  .then(() => {
-        popupDelete.cardDelete.deleteCard();
-        popupDelete.close();
-      })
-      .catch((err) => alert(err))
+  api
+    .deleteCard(data)
+    .then(() => {
+      popupDelete.cardDelete.deleteCard();
+      popupDelete.close();
+    })
+    .catch((err) => alert(err))
 );
 popupDelete.setEventListeners();
 
@@ -131,7 +129,12 @@ const userInfo = new UserInfo(
 
 Promise.all([api.getUserInfo(), api.getCardInfo()])
   .then(([userData, userCard]) => {
-    userInfo.setUserInfo(userData.name, userData.about, userData.avatar, userData._id);
+    userInfo.setUserInfo(
+      userData.name,
+      userData.about,
+      userData.avatar,
+      userData._id
+    );
     cardsList.renderItems(userCard);
   })
   .catch((err) => alert(err));

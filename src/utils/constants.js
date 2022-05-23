@@ -6,7 +6,9 @@ export const formPhoto = document.querySelector(".popup__photo");
 export const nameInput = document.querySelector(".popup__input_type_name");
 export const jobInput = document.querySelector(".popup__input_type_job");
 export const buttonOpenAddCardPopup = document.querySelector(".profile__add");
-export const buttonOpenEditPhoto = document.querySelector(".profile__edit-photo");
+export const buttonOpenEditPhoto = document.querySelector(
+  ".profile__edit-photo"
+);
 export const validationSetting = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",

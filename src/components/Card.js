@@ -31,12 +31,12 @@ export default class Card {
     return cardElement;
   }
 
-  changeLike (newCounter) {
-    this._likeButton.classList.toggle('element__heart_active');
+  changeLike(newCounter) {
+    this._likeButton.classList.toggle("element__heart_active");
     this._likeButton.nextElementSibling.textContent = newCounter;
   }
 
-  deleteCard () {
+  deleteCard() {
     this._element.remove();
     this._element = null;
   }
@@ -86,11 +86,7 @@ export default class Card {
         .classList.add("element__delete_noDelete");
     }
 
-    if (
-      this._likes.some(
-        (likeAuthor) => likeAuthor._id === this._userId
-      )
-    ) {
+    if (this._likes.some((likeAuthor) => likeAuthor._id === this._userId)) {
       this._likeButton.classList.add("element__heart_active");
     }
 
